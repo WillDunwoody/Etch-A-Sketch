@@ -1,0 +1,39 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.header {
+    border: 1px black solid;
+    display: flex;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.etchContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 640px;
+    height: 640px;
+    border: 2px black solid;
+}
+
+.etchContainer div{
+    flex-grow: 1;
+    border: 1px black solid;
+}
+
+.newGrid {
+    border: 1px black solid;
+}
