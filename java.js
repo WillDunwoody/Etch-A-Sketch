@@ -13,40 +13,60 @@ function etchGrid() {
         newDiv.style.height = `${measure}px`;
         etchContainer.appendChild(newDiv);
     }
-    sketch()
+    defaultColor();
 }
 
-function sketch() {
-    let sketch = document.querySelectorAll('.sketch');
-    console.log(sketch)
-    sketch.forEach((sketch) => {
-    sketch.addEventListener("mouseover", function() {
-        sketch.style.background = 'black';
-    });
-});
-};
+const defaultColorButton = document.getElementById("defaultColor");
+
+    defaultColorButton.addEventListener("click", function() {
+        defaultColor();
+    })
+
+    function defaultColor() {
+        const sketch = document.querySelectorAll('.sketch');
+            sketch.forEach((sketch) => {
+            sketch.addEventListener("mouseover", function() {
+                sketch.style.background = 'black';
+            });
+        });
+    };
+
+const rainbowButton = document.getElementById("rainbow");
+
+    rainbowButton.addEventListener("click", function() {
+        rainbow();
+    })
+
+    function rainbow() {
+        const sketch = document.querySelectorAll('.sketch');
+        sketch.forEach((sketch) => {
+            sketch.addEventListener("mouseover", function() {
+            let rainbowColor = Math.floor(Math.random() * 300);
+            sketch.style.background = `hsl(${rainbowColor}, 100%, 50%)`;
+            });
+        })
+    }
+
+const reset = document.getElementById('resetButton');
+
+    reset.addEventListener("click", function() {
+        newGrid();
+    })
+
+    function newGrid() {
+        x = (prompt("How big would you like?"))
+        if (x <= 100) {
+            clear();
+            etchGrid(x);
+        } else {
+            alert("Number is too big, try again.")
+        }
+    }
 
 function clear() {
     while (etchContainer.firstChild) {
         etchContainer.removeChild(etchContainer.firstChild);
     }
 };
-
-function newGrid() {
-    x = (prompt("How big would you like?"))
-    if (x < 100) {
-        clear();
-        etchGrid(x);
-    } else {
-        alert("Number is too big, try again.")
-    }
-}
-
-const reset = document.getElementById('resetButton');
-
-reset.addEventListener("click", function() {
-    newGrid();
-})
-
 
 etchGrid();

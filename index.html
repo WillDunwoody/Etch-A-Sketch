@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="stylesheet.css"> 
     <title>Etch-A-Sketch</title>
 </head>
@@ -12,16 +14,20 @@
     </div>
 
     <div class = "container">
-        <div id = "chooseAmount">
-            <p>Choose your size!</p>
-        </div>
-        <div id = "resetButton">
-            <button>Reset</button>
+        <div class = "topBar">
+            <div id = "defaultColor">
+                <button>Black</button>
+            </div>
+            <div id = "resetButton">
+                <button id ="resetText">Reset</button>
+            </div>
+            <div id = "rainbow">
+                <button id= "rainbowText">Rainbow</button>
+            </div>
         </div>
         <div class = "etchContainer"></div>
     </div>
     
-
     <script src="java.js"></script>
 </body>
 </html>

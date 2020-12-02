@@ -5,13 +5,47 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    font-family: "Amatic SC", cursive;
 }
 
 .header {
-    border: 1px black solid;
+    margin-top: 0;
+    padding-top: 0;
     display: flex;
     text-align: center;
+    font-size: 2em;
+    color: #8CA0C7;
+}
+
+.topBar {
+    border: 2px #8CA0C7 solid;
+    width: 640px;
+    height: 3em;
+    display: flex;
+    justify-content: space-around;
+    background-color: #8CA0C7;
+}
+
+.topBar button {
+    background-color: #8CA0C7;
+    font-family: "Amatic SC", cursive;
+    font-weight: bold;
+    font-size: 2em;
+    border-style: none;
+    width: 100px;
+}
+
+button:hover {
+    font-size: 2.5em;
+}
+
+#resetText {
+    color: white;
+}
+
+#rainbowText {
+    background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+    color: transparent;
 }
 
 .container {
@@ -26,6 +60,6 @@ body {
     flex-wrap: wrap;
     width: 640px;
     height: 640px;
-    border: 2px black solid;
+    border: 2px #8CA0C7 solid;
 }
 
