@@ -1,26 +1,24 @@
 
 const etchContainer = document.querySelector('.etchContainer');
-let x = 16
+let userInput = 16;
 
 function etchGrid() {
-    const y = x * x;
-    const measure = 640/x;
+    const divAmount = userInput * userInput;
+    const divSize = 640/userInput;
 
-    for (let i = 0; i < y; i++) {
+    for (let i = 0; i < divAmount; i++) {
         let newDiv = document.createElement('div');
         newDiv.className = "sketch";
-        newDiv.style.width = `${measure}px`;
-        newDiv.style.height = `${measure}px`;
+        newDiv.style.width = `${divSize}px`;
+        newDiv.style.height = `${divSize}px`;
         etchContainer.appendChild(newDiv);
-    }
+    };
     defaultColor();
-}
+};
 
 const defaultColorButton = document.getElementById("defaultColor");
 
-    defaultColorButton.addEventListener("click", function() {
-        defaultColor();
-    })
+    defaultColorButton.addEventListener("click", defaultColor);
 
     function defaultColor() {
         const sketch = document.querySelectorAll('.sketch');
@@ -33,9 +31,7 @@ const defaultColorButton = document.getElementById("defaultColor");
 
 const rainbowButton = document.getElementById("rainbow");
 
-    rainbowButton.addEventListener("click", function() {
-        rainbow();
-    })
+    rainbowButton.addEventListener("click", rainbow);
 
     function rainbow() {
         const sketch = document.querySelectorAll('.sketch');
@@ -44,29 +40,27 @@ const rainbowButton = document.getElementById("rainbow");
             let rainbowColor = Math.floor(Math.random() * 300);
             sketch.style.background = `hsl(${rainbowColor}, 100%, 50%)`;
             });
-        })
-    }
+        });
+    };
 
 const reset = document.getElementById('resetButton');
 
-    reset.addEventListener("click", function() {
-        newGrid();
-    })
+    reset.addEventListener("click", newGrid);
 
     function newGrid() {
-        x = (prompt("How big would you like?"))
-        if (x <= 100) {
-            clear();
-            etchGrid(x);
+        userInput = (prompt("Choose how big you would like between 1 - 100?"))
+        if (userInput > 100 || userInput <= 0) {
+            alert("I'm sorry we can't do that, please try again");
         } else {
-            alert("Number is too big, try again.")
-        }
-    }
+            clear();
+            etchGrid(userInput);
+        };
+    };
 
 function clear() {
     while (etchContainer.firstChild) {
         etchContainer.removeChild(etchContainer.firstChild);
-    }
+    };
 };
 
 etchGrid();
