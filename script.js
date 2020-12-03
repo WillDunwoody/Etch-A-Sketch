@@ -49,7 +49,7 @@ const reset = document.getElementById('resetButton');
 
     function newGrid() {
         userInput = (prompt("Choose how big you would like between 1 - 100?"))
-        if (userInput > 100 || userInput <= 0) {
+        if (userInput > 100 || userInput <= 0 || isNaN(userInput)) {
             alert("I'm sorry we can't do that, please try again");
         } else {
             clear();
